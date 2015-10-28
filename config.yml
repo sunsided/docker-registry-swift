@@ -1,0 +1,37 @@
+version: 0.1
+log:
+  level: info
+  formatter: text
+  fields:
+    service: registry
+    environment: production
+storage:
+  swift:
+    username: "openstack-swift-username"
+    password: "openstack-swift-password"
+    authurl: "https://fra02.objectstorage.softlayer.net/auth/v1.0/"
+    container: "docker-registry"
+  delete:
+    enabled: true
+  redirect:
+    disable: false
+  cache:
+    blobdescriptor: inmemory
+  maintenance:
+    uploadpurging:
+      enabled: true
+      age: 168h
+      interval: 24h
+      dryrun: false
+    readonly:
+      enabled: false
+http:
+  addr: "0.0.0.0:5000"
+  secret: "http-shared-secred"
+  headers:
+    X-Content-Type-Options: [nosniff]
+health:
+  storagedriver:
+    enabled: true
+    interval: 10s
+    threshold: 3
