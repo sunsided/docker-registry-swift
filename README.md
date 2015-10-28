@@ -1,4 +1,6 @@
-# Docker Registry prepared for OpenStack Swift
+# Docker Registry 2 for OpenStack Swift
+
+This image builds off `registry:2` with prepared support for OpenStack Swift, e.g. on IBM SoftLayer.
 
 In order to fully use OpenStack Swift Object Storage, set these environment variables on `docker run`:
 
