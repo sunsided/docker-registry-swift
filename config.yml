@@ -27,7 +27,6 @@ storage:
       enabled: false
 http:
   addr: "0.0.0.0:5000"
-  secret: "http-shared-secred"
   headers:
     X-Content-Type-Options: [nosniff]
 health:
